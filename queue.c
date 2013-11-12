@@ -56,29 +56,15 @@ int Dequeue(Queue Q){
         return -1;
     }
 
-    //printf("dequeue\n");
-
     if(Q->size == 0){
         printf("Q is empty\n");
         return -1;
     }    
     
     int value = Q->front->value;
-
-    //printf("get value successfully\n");
-
     Element temp = Q->front;
-
-    //printf("get front\n");
-
     Q->front = Q->front->next;
-
-    //printf("change front\n");
-
     free(temp);
-
-    //printf("free front\n");
-
     Q->size -= 1;
 
     return value;
